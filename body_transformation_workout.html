@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💪 Body Transformation | 54→65 KG</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E53E2F;
+    --red-dark: #B52E22;
+    --orange: #F47C20;
+    --yellow: #F5C518;
+    --bg: #0A0A0A;
+    --bg2: #111111;
+    --bg3: #1A1A1A;
+    --bg4: #222222;
+    --text: #F0EDE8;
+    --muted: #888888;
+    --border: #2A2A2A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(229,62,47,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(244,124,32,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(229,62,47,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(229,62,47,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+    animation: fadeUp .6s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 15vw, 160px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin-bottom: 16px;
+    animation: fadeUp .7s ease both .1s;
+  }
+
+  .hero-title span { color: var(--red); }
+
+  .hero-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+    animation: fadeUp .7s ease both .2s;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp .7s ease both .3s;
+  }
+
+  .hero-stat {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 20px 32px;
+    text-align: center;
+  }
+
+  .hero-stat:first-child { border-radius: 12px 0 0 12px; }
+  .hero-stat:last-child { border-radius: 0 12px 12px 0; }
+
+  .hero-stat .val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .hero-stat .lbl {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    padding: 16px 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    background: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+
+  .nav-btn:hover { color: var(--text); }
+  .nav-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+  /* SECTIONS */
+  .section { display: none; padding: 60px 24px; max-width: 1100px; margin: 0 auto; }
+  .section.visible { display: block; }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 8vw, 72px);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .section-title span { color: var(--red); }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  /* DAY CARDS */
+  .days-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .day-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color .2s, transform .15s;
+  }
+
+  .day-card:hover { border-color: #3a3a3a; transform: translateX(2px); }
+  .day-card.open { border-color: var(--red); }
+
+  .day-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    user-select: none;
+  }
+
+  .day-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--red);
+    line-height: 1;
+    min-width: 32px;
+  }
+
+  .day-info { flex: 1; }
+
+  .day-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .day-focus {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .day-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .day-arrow {
+    font-size: 16px;
+    color: var(--muted);
+    transition: transform .3s;
+  }
+
+  .day-card.open .day-arrow { transform: rotate(180deg); }
+
+  .day-body {
+    display: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .day-card.open .day-body { display: block; }
+
+  /* EXERCISE TABLE */
+  .ex-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .ex-table th {
+    padding: 12px 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ex-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .ex-table tr:last-child td { border-bottom: none; }
+  .ex-table tr:hover td { background: var(--bg3); }
+
+  .ex-num-cell {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--border);
+    width: 40px;
+  }
+
+  .ex-name-cell {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .ex-muscle {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--bg4);
+    color: var(--orange);
+    margin-top: 4px;
+  }
+
+  .ex-tip {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .ex-tip::before { content: '💡 '; }
+
+  .ex-sets {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--red);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .power-banner {
+    background: linear-gradient(90deg, rgba(229,62,47,0.15), transparent);
+    border-left: 3px solid var(--red);
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--orange);
+    margin: 0;
+  }
+
+  /* REST DAY */
+  .rest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .rest-item {
+    background: var(--bg3);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .rest-item span { font-size: 20px; }
+
+  /* COLOR THEMES */
+  .chest .day-badge { background: rgba(59,130,246,0.15); color: #60a5fa; }
+  .back .day-badge { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .legs .day-badge { background: rgba(239,68,68,0.15); color: #f87171; }
+  .shoulders .day-badge { background: rgba(234,179,8,0.15); color: #facc15; }
+  .power .day-badge { background: rgba(229,62,47,0.2); color: var(--red); }
+  .arms .day-badge { background: rgba(168,85,247,0.15); color: #c084fc; }
+  .rest-day .day-badge { background: rgba(100,100,100,0.15); color: var(--muted); }
+
+  /* OVERLOAD TABLE */
+  .overload-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .overload-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .overload-card::before {
+    content: attr(data-week);
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: rgba(229,62,47,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .overload-week {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .overload-focus {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .overload-action {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .overload-rest {
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  /* TIPS */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .tip-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color .2s;
+  }
+
+  .tip-card:hover { border-color: #3a3a3a; }
+
+  .tip-icon { font-size: 28px; margin-bottom: 12px; }
+
+  .tip-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .tip-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .tip-text strong { color: var(--orange); font-weight: 600; }
+
+  /* SUPPLEMENTS */
+  .supp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .supp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .supp-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px 0;
+  }
+
+  .supp-dot {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg3);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .supp-content { flex: 1; padding-top: 10px; }
+
+  .supp-month {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+
+  .supp-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .supp-desc { font-size: 13px; color: var(--muted); }
+
+  /* ROADMAP */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+
+  .roadmap-card {
+    background: var(--bg2);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roadmap-card:first-child { border-radius: 12px 0 0 12px; }
+  .roadmap-card:last-child { border-radius: 0 12px 12px 0; }
+
+  .roadmap-card::after {
+    content: attr(data-month);
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    color: rgba(229,62,47,0.05);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .roadmap-m {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .roadmap-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .roadmap-kg {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .roadmap-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .roadmap-list li {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .roadmap-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+  }
+
+  /* DIET MEALS */
+  .meals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .meal-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .meal-time {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .meal-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .meal-cal {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .meal-items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .meal-items li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; }
+  .meal-items li::before { content: '+'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+
+  /* MACRO BAR */
+  .macro-strip {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .macro-seg {
+    padding: 20px 24px;
+    flex: 1;
+    background: var(--bg2);
+  }
+
+  .macro-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .macro-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 60px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  footer .big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 6vw, 60px);
+    color: var(--red);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  footer p { font-size: 14px; color: var(--muted); }
+
+  .owner-name {
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 5vw, 42px);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    animation:
+      rainbowColor 4s linear infinite,
+      glowPulse 3s ease-in-out infinite,
+      fadeUp .5s ease both;
+    filter: drop-shadow(0 0 18px currentColor);
+    cursor: default;
+    user-select: none;
+  }
+
+  @keyframes rainbowColor {
+    0%   { color: #ff0000; text-shadow: 0 0 18px #ff0000, 0 0 40px #ff000088, 0 0 80px #ff000044; }
+    10%  { color: #ff6600; text-shadow: 0 0 18px #ff6600, 0 0 40px #ff660088, 0 0 80px #ff660044; }
+    20%  { color: #ffcc00; text-shadow: 0 0 18px #ffcc00, 0 0 40px #ffcc0088, 0 0 80px #ffcc0044; }
+    30%  { color: #33ff00; text-shadow: 0 0 18px #33ff00, 0 0 40px #33ff0088, 0 0 80px #33ff0044; }
+    40%  { color: #00ffcc; text-shadow: 0 0 18px #00ffcc, 0 0 40px #00ffcc88, 0 0 80px #00ffcc44; }
+    50%  { color: #0099ff; text-shadow: 0 0 18px #0099ff, 0 0 40px #0099ff88, 0 0 80px #0099ff44; }
+    60%  { color: #6600ff; text-shadow: 0 0 18px #6600ff, 0 0 40px #6600ff88, 0 0 80px #6600ff44; }
+    70%  { color: #cc00ff; text-shadow: 0 0 18px #cc00ff, 0 0 40px #cc00ff88, 0 0 80px #cc00ff44; }
+    80%  { color: #ff0099; text-shadow: 0 0 18px #ff0099, 0 0 40px #ff009988, 0 0 80px #ff009944; }
+    90%  { color: #ff0033; text-shadow: 0 0 18px #ff0033, 0 0 40px #ff003388, 0 0 80px #ff003344; }
+    100% { color: #ff0000; text-shadow: 0 0 18px #ff0000, 0 0 40px #ff000088, 0 0 80px #ff000044; }
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { filter: drop-shadow(0 0 12px currentColor) brightness(1); }
+    50%       { filter: drop-shadow(0 0 36px currentColor) brightness(1.4); }
+  }
+
+  .designer-tag {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 9999;
+    background: rgba(10,10,10,0.85);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--muted);
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+    animation: fadeUp .8s ease both 1s;
+  }
+
+  .designer-tag span {
+    animation: goldShimmer 3s ease-in-out infinite;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  @keyframes goldShimmer {
+    0%,100% { color: #c9a84c; text-shadow: 0 0 8px #c9a84c88; }
+    25%      { color: #f5d87a; text-shadow: 0 0 14px #f5d87aaa; }
+    50%      { color: #fff0a0; text-shadow: 0 0 20px #fff0a0cc, 0 0 40px #f5d87a66; }
+    75%      { color: #f5d87a; text-shadow: 0 0 14px #f5d87aaa; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .ex-table th:nth-child(3),
+    .ex-table td:nth-child(3) { display: none; }
+    .hero-stat { padding: 14px 18px; }
+    .roadmap-card:first-child,
+    .roadmap-card:last-child { border-radius: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+
+  <div class="owner-name">𝐈𝐧͢ 乂⎯𝐆𝐇04𝐒𝐓⎯𝗛𝟯̷༏</div>
+
+  <div class="hero-label">3 Month Complete Guide · Indian Style</div>
+  <div class="hero-title">54<span>→</span>65<br>KG</div>
+  <div class="hero-sub">Body Transformation Plan</div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="val">11</div>
+      <div class="lbl">KG Gain</div>
+    </div>
+    <div class="hero-stat">
+      <div class="val">90</div>
+      <div class="lbl">Din</div>
+    </div>
+    <div class="hero-stat">
+      <div class="val">4800</div>
+      <div class="lbl">Cal/Day</div>
+    </div>
+    <div class="hero-stat">
+      <div class="val">250g</div>
+      <div class="lbl">Protein</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <button class="nav-btn active" onclick="show('workout')">💪 Workout</button>
+  <button class="nav-btn" onclick="show('overload')">📈 Overload</button>
+  <button class="nav-btn" onclick="show('diet')">🍽️ Diet</button>
+  <button class="nav-btn" onclick="show('tips')">⚡ Pro Tips</button>
+  <button class="nav-btn" onclick="show('supps')">💊 Supplements</button>
+  <button class="nav-btn" onclick="show('roadmap')">🗺️ Roadmap</button>
+</nav>
+
+<!-- WORKOUT SECTION -->
+<div class="section visible" id="sec-workout">
+  <div class="section-title">Weekly <span>Workout</span></div>
+  <div class="section-sub">6 Days Training · 1 Day Rest</div>
+
+  <div class="days-grid">
+
+    <!-- MONDAY -->
+    <div class="day-card chest" onclick="toggle(this)">
+      <div class="day-head">
+        <div class="day-num">01</div>
+        <div class="day-info">
+          <div class="day-name">Monday</div>
+          <div class="day-focus">Chest + Triceps</div>
+        </div>
+        <span class="day-badge">Chest + Tri</span>
+        <span class="day-arrow">▼</span>
+      </div>
+      <div class="day-body">
+        <table class="ex-table">
+          <tr><th>#</th><th>Exercise</th><th>Muscle</th><th>Sets×Reps</th></tr>
+          <tr>
+            <td class="ex-num-cell">1</td>
+            <td><div class="ex-name-cell">Bench Press</div><div class="ex-muscle">Chest</div><div class="ex-tip">Shoulder width grip, bar chest tak laao, slow neeche</div></td>
+            <td><span class="ex-muscle">Chest</span></td>
+            <td class="ex-sets">4×8-12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">2</td>
+            <td><div class="ex-name-cell">Incline DB Press</div><div class="ex-muscle">Upper Chest</div><div class="ex-tip">30-45° angle, upper chest ko target karo</div></td>
+            <td><span class="ex-muscle">Upper Chest</span></td>
+            <td class="ex-sets">4×10</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">3</td>
+            <td><div class="ex-name-cell">Dips</div><div class="ex-muscle">Chest+Tri</div><div class="ex-tip">Aage jhuko chest feel karo, slow neeche aao</div></td>
+            <td><span class="ex-muscle">Chest+Tri</span></td>
+            <td class="ex-sets">4×10</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">4</td>
+            <td><div class="ex-name-cell">Tricep Pushdown</div><div class="ex-muscle">Triceps</div><div class="ex-tip">Elbow body ke paas rakho, wrist straight</div></td>
+            <td><span class="ex-muscle">Triceps</span></td>
+            <td class="ex-sets">4×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">5</td>
+            <td><div class="ex-name-cell">Overhead Extension</div><div class="ex-muscle">Triceps</div><div class="ex-tip">Full stretch lo, slow eccentric phase</div></td>
+            <td><span class="ex-muscle">Triceps</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- TUESDAY -->
+    <div class="day-card back" onclick="toggle(this)">
+      <div class="day-head">
+        <div class="day-num">02</div>
+        <div class="day-info">
+          <div class="day-name">Tuesday</div>
+          <div class="day-focus">Back + Biceps</div>
+        </div>
+        <span class="day-badge">Back + Bi</span>
+        <span class="day-arrow">▼</span>
+      </div>
+      <div class="day-body">
+        <table class="ex-table">
+          <tr><th>#</th><th>Exercise</th><th>Muscle</th><th>Sets×Reps</th></tr>
+          <tr>
+            <td class="ex-num-cell">1</td>
+            <td><div class="ex-name-cell">Deadlift ⭐</div><div class="ex-muscle">Full Back</div><div class="ex-tip">KING exercise — back straight, legs se uthao, hips hinge karo</div></td>
+            <td><span class="ex-muscle">Full Back</span></td>
+            <td class="ex-sets">4×6-8</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">2</td>
+            <td><div class="ex-name-cell">Pull-ups</div><div class="ex-muscle">Lats</div><div class="ex-tip">Dead hang se shuru, chin bar ke upar le jao</div></td>
+            <td><span class="ex-muscle">Lats</span></td>
+            <td class="ex-sets">4×8-10</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">3</td>
+            <td><div class="ex-name-cell">Barbell Rows</div><div class="ex-muscle">Mid Back</div><div class="ex-tip">Hip hinge position, elbows peeche karo, chest mat uthao</div></td>
+            <td><span class="ex-muscle">Mid Back</span></td>
+            <td class="ex-sets">4×10</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">4</td>
+            <td><div class="ex-name-cell">Lat Pulldown</div><div class="ex-muscle">Lats</div><div class="ex-tip">Wide grip, chest tak kheecho, lean back thoda</div></td>
+            <td><span class="ex-muscle">Lats</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">5</td>
+            <td><div class="ex-name-cell">Barbell Curl</div><div class="ex-muscle">Biceps</div><div class="ex-tip">Swing mat karo, slow lower karo — squeeze top pe</div></td>
+            <td><span class="ex-muscle">Biceps</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">6</td>
+            <td><div class="ex-name-cell">Hammer Curl</div><div class="ex-muscle">Biceps</div><div class="ex-tip">Neutral grip, brachialis target — both arms ek saath</div></td>
+            <td><span class="ex-muscle">Biceps</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- WEDNESDAY -->
+    <div class="day-card legs" onclick="toggle(this)">
+      <div class="day-head">
+        <div class="day-num">03</div>
+        <div class="day-info">
+          <div class="day-name">Wednesday</div>
+          <div class="day-focus">Legs + Core</div>
+        </div>
+        <span class="day-badge">Legs + Core</span>
+        <span class="day-arrow">▼</span>
+      </div>
+      <div class="day-body">
+        <table class="ex-table">
+          <tr><th>#</th><th>Exercise</th><th>Muscle</th><th>Sets×Reps</th></tr>
+          <tr>
+            <td class="ex-num-cell">1</td>
+            <td><div class="ex-name-cell">Squats ⭐</div><div class="ex-muscle">Quads+Glutes</div><div class="ex-tip">Ghutne toes ke direction mein, depth parallel ya neeche</div></td>
+            <td><span class="ex-muscle">Quads+Glutes</span></td>
+            <td class="ex-sets">5×10</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">2</td>
+            <td><div class="ex-name-cell">Leg Press</div><div class="ex-muscle">Quads</div><div class="ex-tip">Feet high = glutes, feet low = quads, full range</div></td>
+            <td><span class="ex-muscle">Quads</span></td>
+            <td class="ex-sets">4×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">3</td>
+            <td><div class="ex-name-cell">Lunges</div><div class="ex-muscle">Glutes</div><div class="ex-tip">Long step lo, back knee floor ke paas aana chahiye</div></td>
+            <td><span class="ex-muscle">Glutes</span></td>
+            <td class="ex-sets">3×10/leg</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">4</td>
+            <td><div class="ex-name-cell">Leg Curl</div><div class="ex-muscle">Hamstrings</div><div class="ex-tip">Full range of motion, slow eccentric — don't slam</div></td>
+            <td><span class="ex-muscle">Hamstrings</span></td>
+            <td class="ex-sets">4×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">5</td>
+            <td><div class="ex-name-cell">Calf Raises</div><div class="ex-muscle">Calves</div><div class="ex-tip">Top pe 1 second hold karo, full range of motion</div></td>
+            <td><span class="ex-muscle">Calves</span></td>
+            <td class="ex-sets">4×20</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">6</td>
+            <td><div class="ex-name-cell">Planks</div><div class="ex-muscle">Core</div><div class="ex-tip">Body ek straight line, core tight, breathe karo</div></td>
+            <td><span class="ex-muscle">Core</span></td>
+            <td class="ex-sets">3×60s</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- THURSDAY -->
+    <div class="day-card shoulders" onclick="toggle(this)">
+      <div class="day-head">
+        <div class="day-num">04</div>
+        <div class="day-info">
+          <div class="day-name">Thursday</div>
+          <div class="day-focus">Shoulders + Traps</div>
+        </div>
+        <span class="day-badge">Shoulders</span>
+        <span class="day-arrow">▼</span>
+      </div>
+      <div class="day-body">
+        <table class="ex-table">
+          <tr><th>#</th><th>Exercise</th><th>Muscle</th><th>Sets×Reps</th></tr>
+          <tr>
+            <td class="ex-num-cell">1</td>
+            <td><div class="ex-name-cell">Overhead Press (OHP)</div><div class="ex-muscle">Front Delt</div><div class="ex-tip">Bar chin ke paas, straight up push karo, core tight</div></td>
+            <td><span class="ex-muscle">Front Delt</span></td>
+            <td class="ex-sets">4×8-10</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">2</td>
+            <td><div class="ex-name-cell">Lateral Raises</div><div class="ex-muscle">Side Delt</div><div class="ex-tip">Slight elbow bend, 90° tak uthao, swing nahi</div></td>
+            <td><span class="ex-muscle">Side Delt</span></td>
+            <td class="ex-sets">4×15</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">3</td>
+            <td><div class="ex-name-cell">Front Raises</div><div class="ex-muscle">Front Delt</div><div class="ex-tip">Slow aur controlled movement, momentum use mat karo</div></td>
+            <td><span class="ex-muscle">Front Delt</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">4</td>
+            <td><div class="ex-name-cell">Face Pulls</div><div class="ex-muscle">Rear Delt</div><div class="ex-tip">Ear level pe pull karo, rear delt + rotator cuff health</div></td>
+            <td><span class="ex-muscle">Rear Delt</span></td>
+            <td class="ex-sets">4×15</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">5</td>
+            <td><div class="ex-name-cell">Shrugs</div><div class="ex-muscle">Traps</div><div class="ex-tip">Heavy weight, 1 second top pe hold, circles mat banao</div></td>
+            <td><span class="ex-muscle">Traps</span></td>
+            <td class="ex-sets">3×15</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">6</td>
+            <td><div class="ex-name-cell">Arnold Press</div><div class="ex-muscle">All Delts</div><div class="ex-tip">Rotation karo pressing mein, all 3 delt heads target</div></td>
+            <td><span class="ex-muscle">All Delts</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div class="day-card power" onclick="toggle(this)">
+      <div class="day-head">
+        <div class="day-num">05</div>
+        <div class="day-info">
+          <div class="day-name">Friday</div>
+          <div class="day-focus">Full Body Power Day</div>
+        </div>
+        <span class="day-badge">⚡ POWER 5×5</span>
+        <span class="day-arrow">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="power-banner">⚡ POWER DAY — Heavy weight, kam reps. 3-4 min rest sets ke beech. Progressive overload focus karo.</div>
+        <table class="ex-table">
+          <tr><th>#</th><th>Exercise</th><th>Muscle</th><th>Sets×Reps</th></tr>
+          <tr>
+            <td class="ex-num-cell">1</td>
+            <td><div class="ex-name-cell">Heavy Deadlift</div><div class="ex-muscle">Full Body</div><div class="ex-tip">Max strength — 85-90% of 1RM, perfect form non-negotiable</div></td>
+            <td><span class="ex-muscle">Full Body</span></td>
+            <td class="ex-sets">5×5</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">2</td>
+            <td><div class="ex-name-cell">Bench Press (Heavy)</div><div class="ex-muscle">Chest</div><div class="ex-tip">Compound strength badhao, spotter rakho heavy weight pe</div></td>
+            <td><span class="ex-muscle">Chest</span></td>
+            <td class="ex-sets">5×5</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">3</td>
+            <td><div class="ex-name-cell">Squats (Heavy)</div><div class="ex-muscle">Legs</div><div class="ex-tip">5 rep max ke 85% weight, depth kaafi important hai</div></td>
+            <td><span class="ex-muscle">Legs</span></td>
+            <td class="ex-sets">5×5</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">4</td>
+            <td><div class="ex-name-cell">Weighted Pull-ups</div><div class="ex-muscle">Back</div><div class="ex-tip">Belt se weight add karo, agar nahi ho toh bodyweight</div></td>
+            <td><span class="ex-muscle">Back</span></td>
+            <td class="ex-sets">5×5</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">5</td>
+            <td><div class="ex-name-cell">OHP (Heavy)</div><div class="ex-muscle">Shoulders</div><div class="ex-tip">Strict form, no leg drive, core tight throughout</div></td>
+            <td><span class="ex-muscle">Shoulders</span></td>
+            <td class="ex-sets">5×5</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- SATURDAY -->
+    <div class="day-card arms" onclick="toggle(this)">
+      <div class="day-head">
+        <div class="day-num">06</div>
+        <div class="day-info">
+          <div class="day-name">Saturday</div>
+          <div class="day-focus">Arms + Abs</div>
+        </div>
+        <span class="day-badge">Arms + Abs</span>
+        <span class="day-arrow">▼</span>
+      </div>
+      <div class="day-body">
+        <table class="ex-table">
+          <tr><th>#</th><th>Exercise</th><th>Muscle</th><th>Sets×Reps</th></tr>
+          <tr>
+            <td class="ex-num-cell">1</td>
+            <td><div class="ex-name-cell">Barbell Curl</div><div class="ex-muscle">Biceps</div><div class="ex-tip">Superset ke saath kar sakte ho Skull Crusher ke saath</div></td>
+            <td><span class="ex-muscle">Biceps</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">2</td>
+            <td><div class="ex-name-cell">Skull Crusher</div><div class="ex-muscle">Triceps</div><div class="ex-tip">Bar ko forehead ke paas laao, elbows fixed rakho</div></td>
+            <td><span class="ex-muscle">Triceps</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">3</td>
+            <td><div class="ex-name-cell">Cable Fly</div><div class="ex-muscle">Chest</div><div class="ex-tip">Chest stretch maximize karo, slight elbow bend</div></td>
+            <td><span class="ex-muscle">Chest</span></td>
+            <td class="ex-sets">3×15</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">4</td>
+            <td><div class="ex-name-cell">Preacher Curl</div><div class="ex-muscle">Biceps</div><div class="ex-tip">Full extension lo, slow karo — best biceps isolation</div></td>
+            <td><span class="ex-muscle">Biceps</span></td>
+            <td class="ex-sets">3×12</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">5</td>
+            <td><div class="ex-name-cell">Tricep Dips</div><div class="ex-muscle">Triceps</div><div class="ex-tip">Upright body position for triceps, aage mat jhuko</div></td>
+            <td><span class="ex-muscle">Triceps</span></td>
+            <td class="ex-sets">3×15</td>
+          </tr>
+          <tr>
+            <td class="ex-num-cell">6</td>
+            <td><div class="ex-name-cell">Crunches</div><div class="ex-muscle">Abs</div><div class="ex-tip">Core engage karo, neck mat kheecho, slow controlled</div></td>
+            <td><span class="ex-muscle">Abs</span></td>
+            <td class="ex-sets">4×20</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- SUNDAY -->
+    <div class="day-card rest-day" onclick="toggle(this)">
+      <div class="day-head">
+        <div class="day-num">07</div>
+        <div class="day-info">
+          <div class="day-name">Sunday</div>
+          <div class="day-focus">REST & Recovery</div>
+        </div>
+        <span class="day-badge">😴 REST</span>
+        <span class="day-arrow">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="rest-grid">
+          <div class="rest-item"><span>🚶</span> 20-30 min light walk karo</div>
+          <div class="rest-item"><span>🧘</span> Full body stretching — 15 min</div>
+          <div class="rest-item"><span>🫧</span> Foam rolling — tight areas pe</div>
+          <div class="rest-item"><span>💧</span> 5-6 litre paani peeyo</div>
+          <div class="rest-item"><span>😴</span> 8-9 ghante neend — muscle growth yahan hoti hai</div>
+          <div class="rest-item"><span>🍗</span> High protein diet maintain karo</div>
+          <div class="rest-item"><span>📸</span> Progress photo lo har 2 hafte</div>
+          <div class="rest-item"><span>⚖️</span> Weight note karo subah khane se pehle</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROGRESSIVE OVERLOAD -->
+<div class="section" id="sec-overload">
+  <div class="section-title">Progressive <span>Overload</span></div>
+  <div class="section-sub">Har Hafte Stronger Bano</div>
+  <div class="overload-grid">
+    <div class="overload-card" data-week="1-2">
+      <div class="overload-week">Week 1-2</div>
+      <div class="overload-focus">Form Perfect</div>
+      <div class="overload-action">Light weight se shuru karo. Technique perfect karo. Mind-muscle connection banao. Ye foundation hai — yahan galti mat karo.</div>
+      <div class="overload-rest">⏱ 90 sec rest</div>
+    </div>
+    <div class="overload-card" data-week="3-4">
+      <div class="overload-week">Week 3-4</div>
+      <div class="overload-focus">Load Increase</div>
+      <div class="overload-action">Har exercise mein 5-10% weight badhao. Muscle fatigue feel karo. Agar last 2 reps easy lage toh weight badh gaya.</div>
+      <div class="overload-rest">⏱ 2 min rest</div>
+    </div>
+    <div class="overload-card" data-week="5-8">
+      <div class="overload-week">Week 5-8</div>
+      <div class="overload-focus">Strength Phase</div>
+      <div class="overload-action">Har hafte 2.5-5kg badhao. Volume bhi badhao. Drop sets add karo last set mein. Yahan se asli growth shuru hoti hai.</div>
+      <div class="overload-rest">⏱ 2-3 min rest</div>
+    </div>
+    <div class="overload-card" data-week="9-12">
+      <div class="overload-week">Week 9-12</div>
+      <div class="overload-focus">Peak Phase</div>
+      <div class="overload-action">Maximum weight. Supersets add karo. Failure tak push karo. Last set mein sab kuch do. Results yahan best honge.</div>
+      <div class="overload-rest">⏱ 3 min rest</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size:32px; margin-bottom:12px;">Advanced <span>Techniques</span></div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🔽</div>
+      <div class="tip-title">Drop Sets</div>
+      <div class="tip-text">Last set mein failure tak jao, phir <strong>weight 20% ghata ke</strong> turant continue karo bina rest ke. Muscle fully exhaust hoti hai. Week 5 se add karo.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⚡</div>
+      <div class="tip-title">Supersets</div>
+      <div class="tip-text">2 exercises bina rest ke karo. Example: <strong>Barbell Curl + Skull Crusher</strong> back-to-back. Time bachta hai aur pump double hoti hai.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🐢</div>
+      <div class="tip-title">Tempo Training</div>
+      <div class="tip-text">Neeche aate waqt <strong>3-4 second lo</strong> (eccentric). Tension time badhta hai = zyada muscle damage = zyada growth.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">✂️</div>
+      <div class="tip-title">Partial Reps</div>
+      <div class="tip-text">Full reps ke baad <strong>5 half reps</strong> karo. Muscle last bit exhaust ho jati hai. Calves aur biceps pe especially effective.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🤝</div>
+      <div class="tip-title">Forced Reps</div>
+      <div class="tip-text">Failure ke baad <strong>partner se 2-3 extra reps</strong> karwao. Body ko failure se aage le jaana biggest trigger hai growth ka.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔄</div>
+      <div class="tip-title">Deload Week</div>
+      <div class="tip-text">Har <strong>6-8 hafte ek deload week</strong> lo — weight 50% kam karo, reps zyada. Body recover hoti hai, phir aur strong wapas aati hai.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DIET SECTION -->
+<div class="section" id="sec-diet">
+  <div class="section-title">Daily <span>Diet</span> Plan</div>
+  <div class="section-sub">4500+ Calories Per Day</div>
+
+  <div class="macro-strip">
+    <div class="macro-seg">
+      <div class="macro-val" style="color:var(--red)">4500-4800</div>
+      <div class="macro-lbl">Calories/Day</div>
+    </div>
+    <div class="macro-seg">
+      <div class="macro-val" style="color:var(--orange)">230-250g</div>
+      <div class="macro-lbl">Protein</div>
+    </div>
+    <div class="macro-seg">
+      <div class="macro-val" style="color:var(--yellow)">500-600g</div>
+      <div class="macro-lbl">Carbs</div>
+    </div>
+    <div class="macro-seg">
+      <div class="macro-val" style="color:#8BC34A">80-100g</div>
+      <div class="macro-lbl">Fat</div>
+    </div>
+  </div>
+
+  <div class="meals-grid">
+    <div class="meal-card">
+      <div class="meal-time">6:30 AM</div>
+      <div class="meal-name">Wake Up Meal</div>
+      <div class="meal-cal">~600 Cal</div>
+      <ul class="meal-items">
+        <li>3 Banana</li>
+        <li>600ml Full Cream Doodh</li>
+        <li>15 Badam + 10 Kaju</li>
+        <li>2 tsp Ghee doodh mein</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">8:30 AM</div>
+      <div class="meal-name">Breakfast</div>
+      <div class="meal-cal">~900 Cal</div>
+      <ul class="meal-items">
+        <li>6 Eggs Omelette (ghee mein)</li>
+        <li>6 Roti with Ghee</li>
+        <li>1 Bowl Dahi</li>
+        <li>2 Banana + 1 Glass Doodh</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">11:00 AM</div>
+      <div class="meal-name">Mid Morning</div>
+      <div class="meal-cal">~600 Cal</div>
+      <ul class="meal-items">
+        <li>4 Boiled Eggs</li>
+        <li>2 Roti + 3 tsp Peanut Butter</li>
+        <li>1 Apple + 1 Banana</li>
+        <li>50g Roasted Peanuts</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">1:30 PM</div>
+      <div class="meal-name">Heavy Lunch 🔥</div>
+      <div class="meal-cal">~1000 Cal</div>
+      <ul class="meal-items">
+        <li>300g Chicken Curry (ghee mein)</li>
+        <li>3 Cup Rice</li>
+        <li>1 Bowl Dal + Ghee</li>
+        <li>Sabzi + Dahi + Salad</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">4:00 PM</div>
+      <div class="meal-name">Pre-Workout</div>
+      <div class="meal-cal">~400 Cal</div>
+      <ul class="meal-items">
+        <li>2 Banana</li>
+        <li>2 tsp Peanut Butter</li>
+        <li>1 Glass Doodh</li>
+        <li>Black Coffee (energy ke liye)</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">6:00 PM</div>
+      <div class="meal-name">Post-Workout Shake</div>
+      <div class="meal-cal">~800 Cal</div>
+      <ul class="meal-items">
+        <li>700ml Doodh</li>
+        <li>3 Banana</li>
+        <li>4 tsp Peanut Butter</li>
+        <li>80g Oats + 2 tsp Honey</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">8:00 PM</div>
+      <div class="meal-name">Evening Snack</div>
+      <div class="meal-cal">~500 Cal</div>
+      <ul class="meal-items">
+        <li>150g Paneer Bhurji (ghee mein)</li>
+        <li>3 Roti with Ghee</li>
+        <li>50g Dry Fruits mix</li>
+        <li>1 Glass Doodh</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">10:00 PM</div>
+      <div class="meal-name">Dinner</div>
+      <div class="meal-cal">~800 Cal</div>
+      <ul class="meal-items">
+        <li>250g Chicken / 6 Eggs Bhurji</li>
+        <li>3 Cup Rice / 6 Roti</li>
+        <li>Dal + Sabzi (ghee)</li>
+        <li>Haldi Doodh</li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">11:30 PM</div>
+      <div class="meal-name">Before Bed</div>
+      <div class="meal-cal">~350 Cal</div>
+      <ul class="meal-items">
+        <li>400ml Full Cream Doodh</li>
+        <li>3 tsp Peanut Butter</li>
+        <li>5 Kaju + 1 tsp Honey</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PRO TIPS -->
+<div class="section" id="sec-tips">
+  <div class="section-title">Pro <span>Tips</span></div>
+  <div class="section-sub">Advanced Secrets for Maximum Growth</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">📊</div>
+      <div class="tip-title">Calorie Cycling</div>
+      <div class="tip-text"><strong>Gym days: 4800+ calories</strong> | Rest days: 3500-4000 calories. Ye fat gain minimize karta hai aur muscle gain maximize karta hai. Smart bulking hai ye.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⏰</div>
+      <div class="tip-title">Nutrition Timing</div>
+      <div class="tip-text"><strong>Pre-workout:</strong> Complex carbs + protein (1hr pehle). <strong>Post-workout:</strong> Fast carbs + protein (30 min mein). Before bed: Slow protein.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">😴</div>
+      <div class="tip-title">Sleep = 70% Growth</div>
+      <div class="tip-text">7-9 hours neend MUST hai. <strong>Growth Hormone sirf deep sleep mein release hota hai.</strong> Neend mein 70% muscle repair hoti hai — ye supplement se zyada important hai.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🧠</div>
+      <div class="tip-title">Mind-Muscle Connection</div>
+      <div class="tip-text">Exercise karte waqt muscle ko feel karo — blindly weight mat uthao. Ye technique <strong>40% zyada muscle fiber activate</strong> karta hai. Phone band karo gym mein.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💪</div>
+      <div class="tip-title">Compound Movements First</div>
+      <div class="tip-text">Hamesha <strong>Squat, Deadlift, Bench Press, Pull-ups</strong> se workout shuru karo. Maximum muscle + maximum calories. Isolation exercises secondary hain.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📝</div>
+      <div class="tip-title">Track Everything</div>
+      <div class="tip-text">Roz subah weight note karo. <strong>Gym diary mein sets, reps, weight sab likhte jao.</strong> Har 2 hafte progress photos lo — comparison motivation deta hai.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💧</div>
+      <div class="tip-title">Hydration Rules</div>
+      <div class="tip-text"><strong>5-6 litre paani daily</strong> — muscles 70% water hain. Khane ke beech paani kam pino. Workout se 2 ghante pehle 500ml extra. Sports drink agar sweat zyada aata hai.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🧘</div>
+      <div class="tip-title">Stress Control</div>
+      <div class="tip-text">High cortisol = muscle breakdown = weight loss. <strong>10 min meditation daily.</strong> 5-6 din gym + 1-2 din rest — overtraining mat karo. Happy raho, stress se zyada kuch muscle nahi todta.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Cold-Hot Shower</div>
+      <div class="tip-text">Workout ke baad <strong>pehle thanda, phir garam paani</strong> → blood flow badhta hai, recovery fast hoti hai. Muscle soreness bhi kam hoti hai.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SUPPLEMENTS -->
+<div class="section" id="sec-supps">
+  <div class="section-title"><span>Supplements</span> Timeline</div>
+  <div class="section-sub">Safe & Effective Order</div>
+  <div class="supp-timeline">
+    <div class="supp-item">
+      <div class="supp-dot">M1</div>
+      <div class="supp-content">
+        <div class="supp-month">Month 1</div>
+        <div class="supp-name">Sirf Ghar ka Khana</div>
+        <div class="supp-desc">Koi supplement nahi chahiye pehle mahine. Khane ki quality aur quantity pe focus karo. Body pehle natural growth ke liye adapt kare.</div>
+      </div>
+    </div>
+    <div class="supp-item">
+      <div class="supp-dot">M2</div>
+      <div class="supp-content">
+        <div class="supp-month">Month 2</div>
+        <div class="supp-name">Whey Protein + Multivitamin</div>
+        <div class="supp-desc">1-2 scoop Whey Protein daily add karo agar budget ho. Post-workout ya morning mein. Multivitamin roz subah. Ye optional hai — khana zyada important hai.</div>
+      </div>
+    </div>
+    <div class="supp-item">
+      <div class="supp-dot">M3</div>
+      <div class="supp-content">
+        <div class="supp-month">Month 3</div>
+        <div class="supp-name">Creatine Monohydrate</div>
+        <div class="supp-desc">5g/day roz lo — timing matter nahi karta. Safest + most effective supplement. 5-10% extra strength milti hai. Results clearly visible honge last month mein.</div>
+      </div>
+    </div>
+    <div class="supp-item">
+      <div class="supp-dot">OPT</div>
+      <div class="supp-content">
+        <div class="supp-month">Optional (Any Time)</div>
+        <div class="supp-name">Ashwagandha</div>
+        <div class="supp-desc">600mg roz raat ko lo. Natural testosterone 15-20% badhata hai. Recovery fast karti hai. Stress (cortisol) kam karta hai = zyada muscle growth. Bilkul safe Indian herb hai.</div>
+      </div>
+    </div>
+    <div class="supp-item">
+      <div class="supp-dot">OPT</div>
+      <div class="supp-content">
+        <div class="supp-month">Optional</div>
+        <div class="supp-name">Fish Oil (Omega-3)</div>
+        <div class="supp-desc">Joint health + inflammation kam karna. Heavy training mein joints pe stress padta hai. 1-2 capsule roz khane ke saath. Budget ho toh add karo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROADMAP -->
+<div class="section" id="sec-roadmap">
+  <div class="section-title">3 Month <span>Roadmap</span></div>
+  <div class="section-sub">54 KG se 65 KG tak ka Safar</div>
+
+  <div class="roadmap-grid">
+    <div class="roadmap-card" data-month="1">
+      <div class="roadmap-m">Month 1</div>
+      <div class="roadmap-title">Foundation</div>
+      <div class="roadmap-kg">56-57 KG</div>
+      <ul class="roadmap-list">
+        <li>Body ko heavy eating ki aadat lagao</li>
+        <li>Basic compound lifts seekho — form perfect karo</li>
+        <li>3500-4000 cal/day se shuru karo</li>
+        <li>Sleep aur recovery pe focus</li>
+        <li>Dirty bulk approach lo</li>
+      </ul>
+    </div>
+    <div class="roadmap-card" data-month="2">
+      <div class="roadmap-m">Month 2</div>
+      <div class="roadmap-title">Growth Phase</div>
+      <div class="roadmap-kg">59-61 KG</div>
+      <ul class="roadmap-list">
+        <li>Weight training intensity badhao</li>
+        <li>4000-4500 cal/day target</li>
+        <li>Progressive overload strictly follow karo</li>
+        <li>Protein 220g+ daily maintain karo</li>
+        <li>Visible muscle definition aani shuru hogi</li>
+      </ul>
+    </div>
+    <div class="roadmap-card" data-month="3">
+      <div class="roadmap-m">Month 3</div>
+      <div class="roadmap-title">Peak Phase</div>
+      <div class="roadmap-kg">64-65 KG</div>
+      <ul class="roadmap-list">
+        <li>Maximum intensity heavy training</li>
+        <li>4500-5000 cal/day</li>
+        <li>Body shape clearly visible hoga</li>
+        <li>Creatine add karo agar budget ho</li>
+        <li>Last month mein results best honge</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size:32px;margin-bottom:16px;">Do's & <span>Don'ts</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:24px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#4ade80;letter-spacing:1px;margin-bottom:16px;">✅ DO'S</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">Roz 2-3 ghante baad kuch khao</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">Ghee har meal mein daalo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">Weekly weight note karo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">5-6 litre paani daily</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">Compound exercises priority lo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">7-9 hours neend lo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">Progress photos khicho</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #4ade80;">Consistent raho — 90 din tak</div>
+      </div>
+    </div>
+    <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:24px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#f87171;letter-spacing:1px;margin-bottom:16px;">❌ DON'TS</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Khana skip mat karo kabhi</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Cardio bahut zyada mat karo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Junk food pe depend mat ho</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Neend mat chodo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Overtraining mat karo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Gym session miss mat karo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Alcohol aur smoking avoid karo</div>
+        <div style="font-size:13px;color:var(--muted);padding-left:12px;border-left:2px solid #f87171;">Quick results ki umeed mat rakho</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DESIGNER CREDIT -->
+<div class="designer-tag">Designed by <span>✧ 𝐑𝐎𝐋𝐄𝐗 ✧</span></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="big">Sirf 90 Din.<br>Strong Body. Strong Mind.</div>
+  <p style="margin-top:16px;">54 KG se 65 KG — ek strong body zaroor milegi.<br>Har din thoda better ban. Consistent reh. 🔥</p>
+</footer>
+
+<script>
+  function show(tab) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('sec-' + tab).classList.add('visible');
+    event.target.classList.add('active');
+    window.scrollTo({top: document.querySelector('nav').offsetTop, behavior:'smooth'});
+  }
+
+  function toggle(card) {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.day-card.open').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+</script>
+</body>
+</html>
